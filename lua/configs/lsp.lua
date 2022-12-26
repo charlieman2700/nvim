@@ -3,13 +3,68 @@ vim.keymap.set('n', 'lj', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>lh', vim.diagnostic.open_float)
 
 local on_attach = require('utils').lsp_onAttach
-
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+--
+-- require("lvim.lsp.manager").setup("ltex", {
+-- 	settings = {
+-- 		ltex = {
+-- 			dictionary = {
+-- 				["es"] = words,
+-- 			},
+-- 			disabledRules = { ["es"] = { "SMART_QUOTES" } },
+-- 			-- commands =  vim.json.decode("{ '\\label{}': 'ignore', '\\documentclass[]{}': 'ignore', '\\cite{}': 'dummy', '\\cite[]{}': 'dummy'}"),
+-- 			additionalRules = {
+-- 				enablePickyRules = true,
+-- 				motherTongue = "es",
+-- 			},
+-- 			language = "es",
+-- 		},
+-- 	},
+-- })
+--
+-- require("lvim.lsp.manager").setup("sourcery", {
+-- 	init_options = {
+-- 		--- The Sourcery token for authenticating the user.
+-- 		--- This is retrieved from the Sourcery website and must be
+-- 		--- provided by each user. The extension must provide a
+-- 		--- configuration option for the user to provide this value.
+-- 		token = "user_VCDcHGTmv78ccEkuHNiDhecY1zuXdQ0uYOTp_ylVyg7TlDSmJ5mrGV3ze8I",
+--
+-- 		--- The extension's name and version as defined by the extension.
+-- 		extension_version = "vim.lsp",
+--
+-- 		--- The editor's name and version as defined by the editor.
+-- 		editor_version = "vim",
+-- 	},
+local words = { 'Laboratorio' }
+
+local dictionaries = {
+  path = '/Users/charlie/.config/nvim/lua/dictionaries/es.utf-8.add',
+  dictionaryEnglish = '/Users/charlie/.config/nvim/lua/dictionaries/english.txt',
+}
+for _, value in pairs(dictionaries) do
+  for word in io.open(value, 'r'):lines() do
+    table.insert(words, word)
+  end
+end
 
 local servers = {
-  -- clangd = {},
+  ltex = {
+    ltex = {
+      dictionary = {
+        ['es'] = words,
+      },
+      disabledRules = { ['es'] = { 'SMART_QUOTES' } },
+      -- commands =  vim.json.decode("{ '\\label{}': 'ignore', '\\documentclass[]{}': 'ignore', '\\cite{}': 'dummy', '\\cite[]{}': 'dummy'}"),
+      additionalRules = {
+        enablePickyRules = true,
+        motherTongue = 'es',
+      },
+      language = 'es',
+    },
+  },
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},

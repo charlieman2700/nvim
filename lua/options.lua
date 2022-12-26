@@ -4,7 +4,7 @@ vim.cmd [[colorscheme moonlight]]
 
 -- Set highlight on search
 vim.o.hlsearch = true
-
+vim.opt.spellfile = "/Users/charlie/.config/nvim/lua/dictionaries/es.utf-8.add"
 -- Make line numbers default
 vim.wo.number = true
 
