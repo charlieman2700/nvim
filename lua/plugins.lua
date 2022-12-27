@@ -171,4 +171,10 @@ require('packer').startup(function(use)
       require 'configs.commentTS'
     end,
   }
+  use { 'luisiacc/gruvbox-baby', branch = 'main' }
+
+  --Experimentig
+  use 'hood/popui.nvim'
+
+  use { 'thosakwe/vim-flutter' }
 end)

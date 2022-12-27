@@ -19,3 +19,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  callback = function()
+    vim.cmd [[TSEnable highlight]]
+  end,
+  pattern = '*.dart',
+})

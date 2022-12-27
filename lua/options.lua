@@ -1,6 +1,9 @@
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme moonlight]]
+vim.cmd [[colorscheme gruvbox-baby]]
+
+vim.o.wrap = false
+-- vim.o.nowrap = true
 
 -- Set highlight on search
 vim.o.hlsearch = true

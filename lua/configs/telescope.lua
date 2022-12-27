@@ -9,6 +9,7 @@ require('telescope').setup {
       },
     },
 
+    initial_mode = 'insert',
     extensions = {
       ['ui-select'] = {
         require('telescope.themes').get_dropdown {},

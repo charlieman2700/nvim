@@ -4,6 +4,10 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Buffer Navigation
+vim.keymap.set('n', '<S-l>', ":bnext <cr>", { desc = 'Go to next buffer'})
+vim.keymap.set('n', '<S-h>', ":bprevious <cr>", { desc = 'Go to prev buffer'})
+
 -- Neotree
 vim.keymap.set('n', '<leader>e', ':Neotree toggle <CR>', { desc = 'Toggle Neotree' })
 

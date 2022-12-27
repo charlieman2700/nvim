@@ -7,7 +7,7 @@ require('lualine').setup {
   },
 }
 require('lualine').hide()
-
+--
 vim.api.nvim_create_autocmd('BufAdd', {
   callback = function()
     require('lualine').hide { unhide = true }

@@ -4,25 +4,7 @@ vim.keymap.set('n', '<leader>lh', vim.diagnostic.open_float)
 
 local on_attach = require('utils').lsp_onAttach
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
---
--- require("lvim.lsp.manager").setup("ltex", {
--- 	settings = {
--- 		ltex = {
--- 			dictionary = {
--- 				["es"] = words,
--- 			},
--- 			disabledRules = { ["es"] = { "SMART_QUOTES" } },
--- 			-- commands =  vim.json.decode("{ '\\label{}': 'ignore', '\\documentclass[]{}': 'ignore', '\\cite{}': 'dummy', '\\cite[]{}': 'dummy'}"),
--- 			additionalRules = {
--- 				enablePickyRules = true,
--- 				motherTongue = "es",
--- 			},
--- 			language = "es",
--- 		},
--- 	},
--- })
+local capabilities = require('utils').capabilities
 --
 -- require("lvim.lsp.manager").setup("sourcery", {
 -- 	init_options = {
@@ -100,6 +82,7 @@ mason_lspconfig.setup_handlers {
       settings = servers[server_name],
     }
   end,
+
 }
 
 -- Turn on lsp status information

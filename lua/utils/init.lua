@@ -1,8 +1,13 @@
 local M = {}
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 -- Install packer
 M.install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 M.is_bootstrap = false
+
+M.capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 M.lsp_onAttach = function(_, bufnr)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
@@ -29,7 +34,7 @@ M.lsp_onAttach = function(_, bufnr)
   nmap('<leader>ls', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   nmap('<leader>lws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  -- nmap('<S-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -44,6 +49,5 @@ M.lsp_onAttach = function(_, bufnr)
   --   vim.lsp.buf.format()
   -- end, { desc = 'Format current buffer with LSP' })
 end
-
 
 return M
