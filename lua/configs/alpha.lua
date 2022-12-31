@@ -218,6 +218,7 @@ if status_ok then
         val = bannerCoramDeo,
         opts = { position = "center", hl = "function" },
       },
+      { type = "padding", val = 30 },
 
       -- { type = "padding", val = 14 },
 

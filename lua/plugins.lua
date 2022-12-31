@@ -159,11 +159,12 @@ require('packer').startup(function(use)
     end,
   }
 
-  use 'sainnhe/edge'
+  use 'savq/melange'
   use 'andersevenrud/nordic.nvim'
   use 'shaunsingh/moonlight.nvim'
   use 'frenzyexists/aquarium-vim'
   use 'folke/tokyonight.nvim'
+  use 'ishan9299/nvim-solarized-lua'
 
   use {
     'JoosepAlviste/nvim-ts-context-commentstring',
@@ -173,8 +174,32 @@ require('packer').startup(function(use)
   }
   use { 'luisiacc/gruvbox-baby', branch = 'main' }
 
-  --Experimentig
   use 'hood/popui.nvim'
 
   use { 'thosakwe/vim-flutter' }
+
+  use {
+    'folke/todo-comments.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require('todo-comments').setup {}
+    end,
+  }
+
+  -- React
+  use {
+    'napmn/react-extract.nvim',
+    config = function()
+      require 'configs.react-extract'
+    end,
+  }
+  use {
+    'folke/lsp-colors.nvim',
+    config = function()
+      require 'configs.lsp-colors'
+    end,
+  }
+
+  --Experimentig
+  use 'Rigellute/shades-of-purple.vim'
 end)

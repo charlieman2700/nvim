@@ -1,6 +1,9 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme gruvbox-baby]]
+vim.cmd [[colorscheme solarized-high]]
 
 vim.o.wrap = false
 -- vim.o.nowrap = true
@@ -34,9 +37,6 @@ vim.o.completeopt = 'menuone,noselect'
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
 -- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
 vim.opt.timeoutlen = 140
 
