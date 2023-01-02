@@ -60,7 +60,6 @@ require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = function()
       pcall(require('nvim-treesitter.install').update { with_sync = true })
-      require 'configs.treesitter'
     end,
   }
 

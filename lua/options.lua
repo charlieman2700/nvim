@@ -3,7 +3,7 @@ vim.g.maplocalleader = ' '
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme solarized-high]]
+vim.cmd [[colorscheme shades_of_purple]]
 
 vim.o.wrap = false
 -- vim.o.nowrap = true
