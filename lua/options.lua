@@ -8,9 +8,10 @@ vim.cmd [[colorscheme shades_of_purple]]
 vim.o.wrap = false
 -- vim.o.nowrap = true
 
+local nvimPath = vim.call('stdpath', 'config')
 -- Set highlight on search
 vim.o.hlsearch = true
-vim.opt.spellfile = "/Users/charlie/.config/nvim/lua/dictionaries/es.utf-8.add"
+vim.opt.spellfile = nvimPath .. "/lua/dictionaries/es.utf-8.add"
 -- Make line numbers default
 vim.wo.number = true
 

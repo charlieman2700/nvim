@@ -22,9 +22,10 @@ local capabilities = require('utils').capabilities
 -- 	},
 local words = { 'Laboratorio' }
 
+local nvimPath = vim.call('stdpath', 'config')
 local dictionaries = {
-  path = '/Users/charlie/.config/nvim/lua/dictionaries/es.utf-8.add',
-  dictionaryEnglish = '/Users/charlie/.config/nvim/lua/dictionaries/english.txt',
+  path = nvimPath .. '/lua/dictionaries/es.utf-8.add',
+  dictionaryEnglish = nvimPath .. '/lua/dictionaries/english.txt',
 }
 for _, value in pairs(dictionaries) do
   for word in io.open(value, 'r'):lines() do
@@ -82,7 +83,6 @@ mason_lspconfig.setup_handlers {
       settings = servers[server_name],
     }
   end,
-
 }
 
 -- Turn on lsp status information
