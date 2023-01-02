@@ -1,5 +1,3 @@
-local is_bootstrap = require('utils').is_bootstrap
-
 require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'

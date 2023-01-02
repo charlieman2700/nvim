@@ -1,5 +1,6 @@
-local install_path = require('utils').install_path
-local is_bootstrap = require('utils').is_bootstrap
+local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+
+local is_bootstrap = false;
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   is_bootstrap = true
@@ -21,4 +22,5 @@ if is_bootstrap then
   print '=================================='
   return
 end
+
 
