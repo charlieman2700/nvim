@@ -1,5 +1,10 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+
+-- u for undo is already default
+-- S-U for redo / 
+vim.keymap.set('n', '<S-u>', ':redo <cr>', { desc = 'Quit' })
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })

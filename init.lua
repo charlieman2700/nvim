@@ -16,3 +16,4 @@ require 'autocommands'
 require 'configs.lualine'
 require 'configs.flutter'
 require 'configs.treesitter'
+require('nvim-ts-autotag').setup()

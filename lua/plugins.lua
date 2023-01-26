@@ -83,7 +83,7 @@ require('packer').startup(function(use)
       require('Comment').setup()
     end,
   } -- "gc" to comment visual regions/lines
-  use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+  -- use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
@@ -138,9 +138,6 @@ require('packer').startup(function(use)
   }
   use {
     'windwp/nvim-ts-autotag',
-    config = function()
-      require('nvim-ts-autotag').setup()
-    end,
   }
   use {
     'rafamadriz/friendly-snippets',
@@ -182,6 +179,7 @@ require('packer').startup(function(use)
       require('todo-comments').setup {}
     end,
   }
+  use { 'romgrk/barbar.nvim', wants = 'nvim-web-devicons' }
 
   -- React
   use {
@@ -196,6 +194,7 @@ require('packer').startup(function(use)
       require 'configs.lsp-colors'
     end,
   }
+  use 'olimorris/onedarkpro.nvim'
 
   --Experimentig
   use 'Rigellute/shades-of-purple.vim'

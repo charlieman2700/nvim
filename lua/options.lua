@@ -3,7 +3,7 @@ vim.g.maplocalleader = '.'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme shades_of_purple]]
+vim.cmd [[colorscheme onedark]]
 
 vim.o.wrap = false
 -- vim.o.nowrap = true
@@ -11,7 +11,7 @@ vim.o.wrap = false
 local nvimPath = vim.call('stdpath', 'config')
 -- Set highlight on search
 vim.o.hlsearch = true
-vim.opt.spellfile = nvimPath .. "/lua/dictionaries/es.utf-8.add"
+vim.opt.spellfile = nvimPath .. '/lua/dictionaries/es.utf-8.add'
 -- Make line numbers default
 vim.wo.number = true
 
@@ -20,6 +20,12 @@ vim.o.mouse = 'a'
 
 -- Enable break indent
 vim.o.breakindent = true
+
+-- Set tabs with
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 
 -- Save undo history
 vim.o.undofile = true
@@ -40,4 +46,4 @@ vim.o.completeopt = 'menuone,noselect'
 -- See `:help mapleader`
 
 vim.opt.timeoutlen = 140
-
+vim.opt.linebreak = true
